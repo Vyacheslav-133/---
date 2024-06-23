@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Vulnerability Example</title>
+</head>
+<body>
+    <h1>XSS Vulnerability Example</h1>
+    
+    <!-- Уязвимое поле ввода -->
+    <label for="inputField">Введите текст:</label>
+    <input type="text" id="inputField">
+    
+    <!-- Уязвимая кнопка отправить -->
+    <button onclick="processInput()">Отправить</button>
+
+    <script>
+        function processInput() {
+            // Получаем значение из уязвимого поля ввода и вставляем его в HTML
+            var userInput = document.getElementById("inputField").value;
+            document.write(userInput);
+        }
+    </script>
+</body>
+</html>
